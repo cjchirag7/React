@@ -19,7 +19,7 @@ class CommentForm extends Component{
 
     handleSubmit(values) {
         this.toggleModal();
-        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+        this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
     }
 
     toggleModal(){
@@ -32,7 +32,7 @@ class CommentForm extends Component{
     return (
             <React.Fragment>
             <Button outline onClick={this.toggleModal}>
-            <span class="fa fa-pencil"/> Submit Comment
+            <span className="fa fa-pencil"/> Submit Comment
             </Button>
             <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
             <ModalHeader toggle={this.toggleModal}>

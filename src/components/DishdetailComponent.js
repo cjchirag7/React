@@ -20,7 +20,7 @@ import { baseUrl } from '../shared/baseUrl';
                 <div></div>
             );
             }
-    function RenderComments({comments,addComment, dishId}){
+    function RenderComments({comments,postComment, dishId}){
         if(comments!=null)
         {
         const listItems=comments.map(
@@ -41,13 +41,13 @@ import { baseUrl } from '../shared/baseUrl';
             <ul className="list-unstyled">
             {listItems}
             </ul>
-            <CommentForm dishId={dishId} addComment={addComment}/>
+            <CommentForm dishId={dishId} postComment={postComment}/>
             </div>        
             );
         }
         else {
             return (<div>
-                     <CommentForm dishId={dishId} addComment={addComment}/>
+                     <CommentForm dishId={dishId} postComment={postComment}/>
             </div>);
         }
 
@@ -92,7 +92,7 @@ const Dishdetail=(props)=>{
                     </RenderDish>
                   </div>
                   <div  className="col-12 col-md-5 m-1">
-                  <RenderComments comments={props.comments}  addComment={props.addComment}
+                  <RenderComments comments={props.comments}  postComment={props.postComment}
         dishId={props.dish.id}>
                   </RenderComments>
                   </div>
