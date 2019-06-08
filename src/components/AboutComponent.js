@@ -10,6 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import { Loading } from "./LoadingComponent";
 import { baseUrl } from '../shared/baseUrl';
+import { Fade, Stagger } from 'react-animation-components';
 
 function LeadersList(props){
 
@@ -26,10 +27,14 @@ function LeadersList(props){
   }
 
   else
-  return (<Media list>{props.leaders}</Media>);
+  return (
+  <Stagger in>
+    <Media list>{props.leaders}</Media>
+  </Stagger>);
 }
 function RenderLeader({ leader }) {
     return (
+    <Fade in>
     <Media tag="li">
       <Media left middle>
         <Media object src={baseUrl+leader.image} alt={leader.name} />
@@ -40,6 +45,7 @@ function RenderLeader({ leader }) {
         <p>{leader.description}</p>
       </Media>
     </Media>
+    </Fade>
   );
 }
 
