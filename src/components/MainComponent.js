@@ -32,11 +32,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class Main extends Component {
-  constructor(props)
-  {
-    super(props);
-  }
-
+  
   componentDidMount() {
     this.props.fetchDishes();
     this.props.fetchComments();
@@ -72,14 +68,6 @@ class Main extends Component {
         />
         );
     };
-
-    const AboutPage=()=>{
-      return(
-        <About leaders={this.props.leaders.leaders}
-        leaderLoading={this.props.leaders.isLoading}
-        leaderErrMess={this.props.leaders.errMess}/> 
-      );
-    }
 
     return (
       <div className="App">
