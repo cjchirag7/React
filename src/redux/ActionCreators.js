@@ -28,7 +28,7 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
         headers: {
           "Content-Type": "application/json"
         },
-        credentials: "same-origin"
+        credentials: "cross-origin"
     })
     .then(response => {
         if (response.ok) {
@@ -67,7 +67,7 @@ export const postFeedback = (firstname, lastname, telnum, email, agree, contactT
         headers: {
           "Content-Type": "application/json"
         },
-        credentials: "same-origin"
+        credentials: "cross-origin"
     })
     .then(response => {
         if (response.ok) {
